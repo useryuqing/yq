@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}home{% endblock title %}
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="{% static 'details/css/details.css' %}"/>
+{% endblock link %}
+{% block script %}
+    <script type="text/javascript" src="{% static 'details/js/details.js' %}"></script>
+{% endblock script %}
+{% block header %}
+    <div id="jian">&#60;</div>
+    <header>商品详情</header>{% endblock header %}
+{% block main %}
+
+    <div id="detailsDiv">
+
+        <div>
+            <div>
+                <img src="{{ overimg.img }}"/>
+                <h6>{{ overimg.longName }}</h6>
+                <p class="price"><span>￥{{ overimg.price }}</span></p>
+            </div>
+            <div id="border1">
+                <div class="sigma-content">
+                    <div class="sigma-middle-line">
+                        <span class="sigma-line-text">商品详情</span>
+                    </div>
+                </div>
+                <div id="qing">
+                    <div>
+                        品牌 &nbsp;<span>{{ overimg.brandName }}</span>
+                    </div>
+                    <br/>
+                    <div>
+                        产品规格 &nbsp;<span>{{ overimg.specifics }}</span>
+                    </div>
+                    <br/>
+                    <div>
+                        保质期 &nbsp;<span>{{ overimg.safeDay }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+
+
+{% block footer %}
+    <footer>
+            <dl>
+                    <dt><span id="shou"></span></dt>
+                <dd>收藏</dd>
+            </dl>
+        <div id="tianjia"><span>添加商品</span></div>
+        <section>
+            <button class="subBtn">-</button>
+            <span>0</span>
+            <button class="addBtn">+</button>
+        </section>
+        </footer>
+{% endblock footer %}

@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}home{% endblock title %}
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="{% static 'Shipping/css/Shipping.css' %}"/>
+{% endblock link %}
+{% block script %}
+    <script type="text/javascript" src="{% static 'Shipping/js/Shipping.js' %}"></script>
+{% endblock script %}
+{% block header %}
+    <header>
+        <div class="arrow"><a href="/mine/">&#9668;返回</a></div>
+        <div>收货地址</div>
+    </header>
+{% endblock header %}
+{% block main %}
+    <div id="ShippingDiv">
+    <ul>
+        {% for item in addresses %}
+            <li>
+                <article class="shoppingInfo">
+                    <h6>{{ item.name }}</h6>
+                    <h6>{{ item.phoneNum }}</h6>
+                    <h6>{{ item.address }}</h6>
+                </article>
+
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endblock main %}
+
+{% block footer %}
+
+    <footer>
+        <div id="newaddress">
+            <div>
+                <a href="/addsite/">
+                    <span>+新增地址</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

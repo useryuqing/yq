@@ -1,0 +1,19 @@
+#addsiteDiv{
+    padding: 1.8rem 0;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+header{
+    justify-content:center;
+    background-color:whitesmoke;
+    font-size: 20px;
+}
+
+ .arrow{
+     display: flex;
+     justify-content:flex-start;
+    text-align: left;
+}

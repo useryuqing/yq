@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}home{% endblock title %}
+{% block link %}
+    <link type="text/css" rel="stylesheet" href="{% static 'addsite/css/addsite.css' %}"/>
+{% endblock link %}
+{% block script %}
+    <script type="text/javascript" src="{% static 'addsite/js/addsite.js' %}"></script>
+{% endblock script %}
+{% block header %}
+
+    <header>
+    <div class="arrow"><a href="/mine/">&#9668;返回</a></div>
+        <div class="xin">新增地址</div>
+    </header>
+{% endblock header %}
+{% block main %}
+    <div id="addsiteDiv">
+        <div>
+            <form method="post" action="/addsite/">
+                {% csrf_token %}
+                       <div><b>姓名</b>
+                    <input type="text" class="form-control" placeholder="请输入收货人姓名" name="name">
+                       </div>
+                    <div><b>手机号</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="telphone">
+                    </div>
+                <div>
+                    <select class="addr-city-select keyboard-fix" name="sex" >
+                        <option value="">请选择性别</option>
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </div>
+
+                {#                <div class="form-group">#}
+                {#                    <label for="disabledSelect">手机号</label>#}
+                {#                    <select id="disabledSelect" class="form-control">#}
+                {#                            <option>请输入手机号</option>#}
+                {#                        </select>#}
+                {#                    </div>#}
+                <div><b>省份</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="control1">
+                </div>
+                <div><b>城市</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="control2">
+                </div>
+                    <div><b>区县</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="control3">
+                    </div>
+
+                                        <div><b>街道</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="control4">
+                      </div>
+                <div><b>详细门牌号</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="control5">
+                </div>
+
+
+                <div><b>邮编</b>
+                    <input type="text" class="form-control" placeholder="Text input" name="email">
+
+                </div>
+                <p>
+                    <button type="submit">保存</button>
+                </p>
+
+            </form>
+        </div>
+    </div>
+{% endblock main %}
